@@ -16,3 +16,6 @@ All images courtesy of Unsplash (https://unsplash.com).
 - Ilya (https://unsplash.com/photos/D62hQefhteg)
 - Jay Mantri (https://unsplash.com/photos/TFyi0QOx08c)
 - Caleb George (https://unsplash.com/photos/URmkfvtK3Qw)
+
+# Website Design Credits 
+Website template courtesy of TEMPLATED (https://templated.co). Website uses Binary template (https://templated.co/binary), licensed with a CC-BY 3.0 license (https://creativecommons.org/licenses/by/3.0/). 
