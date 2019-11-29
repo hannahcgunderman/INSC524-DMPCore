@@ -1,9 +1,13 @@
 # Image Credits
 
-All images courtesy of Unsplash (https://unsplash.com), user @wocintechchat:
+All images courtesy of Unsplash (https://unsplash.com):
 
+user @wocintechchat
 - https://unsplash.com/photos/Q8IgAlmHAUA 
 - https://unsplash.com/photos/j64-40UYDu0
+
+user Viktor Talashuk
+- https://unsplash.com/photos/05HLFQu8bFw
 
 
 
