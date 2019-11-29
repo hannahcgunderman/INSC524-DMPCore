@@ -18,9 +18,8 @@ user @charlesdeluvio
 user Hal Gatewood
 - https://unsplash.com/photos/o2305170alM 
 
-
-
-
+user Goran Ivos
+- https://unsplash.com/photos/iOykDIkZLQw
 
 # Website Design Credits 
 Website template courtesy of TEMPLATED (https://templated.co). Website uses Binary template (https://templated.co/binary), licensed with a CC-BY 3.0 license (https://creativecommons.org/licenses/by/3.0/). 
