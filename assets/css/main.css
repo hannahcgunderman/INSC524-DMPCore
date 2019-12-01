@@ -2305,7 +2305,7 @@
   			display: block;
   			margin-left: auto;
   			margin-right: auto;
-  			width: 50%;
+  			width: 75%;
 		}
 		.image.fit {
 			display: block;
@@ -2326,6 +2326,10 @@
 			.image.main img {
 				width: 100%;
 			}
+
+	figcaption {
+  		display: block;
+	}
 
 /* List */
 
