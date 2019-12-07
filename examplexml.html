@@ -41,15 +41,48 @@
 					<header class="major special">
 						<h1>Sample XML for Example Data Management Plan</h1>
 					</header>
-							<pre><code>i = 0;
+							<pre><code>
 
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Users/Leah/Desktop/MSIS/INSC524%20Metadata/Assignment4/XSDFinal.xsd">
+    <fundAgency termsource="LCNAF" termsourceid="n2006182431">National Science Foundation (U.S.). Subcommittee on Nanoscale Science, Engineering, and Technology</fundAgency>
+    <template>DMP Tool</template>
+    <template>Reynholm Industries Internal Template</template>
+    <staffWrap>
+        <creator termsource="local" termsourceid="0118">Avenal, Richmond</creator>
+        <creator termsource="local" termsourceid="999">second creator</creator>
+        <PI termsource="local" termsourceid="881">Barber, Jen</PI>
+        <PI termsource="local" termsourceid="999">Reynholm, Denholm</PI>
+        <contributor termsource="local" termsourceid="119">Moss, Maurice</contributor>
+        <contributor termsource="local" termsourceid="725">Trenneman, Roy</contributor>
+        <contributor termsource="local" termsourceid="3">Reynholm, Douglas</contributor>
+        <affiliation termsource="LCNAF" termsourceid="n2001131100">Channel 4 International</affiliation>
+        <affiliation termsource="local" termsourceid="IT">Information Technology</affiliation>
+    </staffWrap>
+    <date termsource="ISO 8601">20180910</date>
+    <analysisUnit termsource="LCNAF" termsourceid="sh85035858">Data processing service centers</analysisUnit>
+    <storage>Reynholm Industries</storage>
+    <storage>Internet Repository</storage>
+    <description>"This project documents the steps used to create The Internet"</description>
+    <domain termsource="LCSH" termsourceid="sh89003285">Computer science</domain>
+    <domain termsource="LCSH" termsourceid="sh87002293">Information technology</domain>
+    <analysisWrap>
+        <softwarePackage termsource="local" termsourceid="R">R</softwarePackage>
+        <softwarePackage termsource="local" termsourceid="SPS5">Statistical Package for Social Sciences (SPSS)</softwarePackage>
+        <analysisType termsource="LCSH" termsourceid="sh85012506">Bayesian statistical decision theory</analysisType>
+    </analysisWrap>
+    <embargoes>"The public will have access to the raw data one year after the project funding window closes."</embargoes>
+    <dataType termsource="LCSH" termsourceid="sh2007000909">Quantitative</dataType>
+    <dataType termsource="LCSH" termsourceid="sh99004969">Qualitative</dataType>
+    <byteSize>4 TB</byteSize>
+    <rightsReuseWrap>
+        <accessRights>"This DMP may be reused with attribution to creator Matt Berry"</accessRights>
+        <rights>"The public will have access to aggregate data tables"</rights>
+    </rightsReuseWrap>
+</record>
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+</code></pre>
 				</div>
 					
 	</section>
