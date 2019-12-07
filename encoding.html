@@ -39,8 +39,146 @@
 			<section id="main">
 				<div class="inner">
 					<header class="major special">
-						<h1>Encoding Schema (XSD) for DMPHub Application Profile</h1>
+						<h1>Encoding Schema for the Application Profile</h1>
+						<h3><em>Note: code block is fully interactive, and can be dragged with your mouse to see the full width of code</em></h3>
 					</header>
+							<pre><code>
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  &lt;xs:element name="record">
+    &lt;xs:complexType>
+      &lt;xs:sequence>
+        &lt;xs:element ref="fundAgency"/>
+        &lt;xs:element maxOccurs="unbounded" ref="template" minOccurs="0"/>
+        &lt;xs:element ref="staffWrap" maxOccurs="1"/>
+        &lt;xs:element ref="date"/>
+        &lt;xs:element maxOccurs="unbounded" ref="analysisUnit"/>
+        &lt;xs:element maxOccurs="unbounded" ref="storage"/>
+        &lt;xs:element ref="description" minOccurs="0"/>
+        &lt;xs:element maxOccurs="unbounded" ref="domain"/>
+        &lt;xs:element ref="analysisWrap"/>
+        &lt;xs:element ref="embargoes" minOccurs="0"/>
+        &lt;xs:element maxOccurs="unbounded" ref="dataType"/>
+        &lt;xs:element ref="byteSize" maxOccurs="unbounded"/>
+        &lt;xs:element ref="rightsReuseWrap"/>
+      &lt;/xs:sequence>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="fundAgency">
+    &lt;xs:complexType mixed="true">
+      &lt;xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      &lt;xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="template" type="xs:string"/>
+  &lt;xs:element name="staffWrap">
+    &lt;xs:complexType>
+      &lt;xs:sequence>
+        &lt;xs:element maxOccurs="unbounded" ref="creator"/>
+        &lt;xs:element maxOccurs="unbounded" ref="PI"/>
+        &lt;xs:element maxOccurs="unbounded" ref="contributor" minOccurs="0"/>
+        &lt;xs:element maxOccurs="unbounded" ref="affiliation"/>
+      &lt;/xs:sequence>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="creator">
+    &lt;xs:complexType mixed="true">
+      &lt;xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      &lt;xs:attribute name="termsourceid" use="required" type="xs:integer"/>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="PI">
+    &lt;xs:complexType mixed="true">
+      &lt;xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      &lt;xs:attribute name="termsourceid" use="required" type="xs:integer"/>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="contributor">
+    &lt;xs:complexType mixed="true">
+      &lt;xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      &lt;xs:attribute name="termsourceid" use="required" type="xs:integer"/>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="affiliation">
+    &lt;xs:complexType mixed="true">
+      &lt;xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      &lt;xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="date">
+    &lt;xs:complexType>
+      &lt;xs:simpleContent>
+        &lt;xs:extension base="xs:integer">
+          &lt;xs:attribute name="termsource" use="required"/>
+        &lt;/xs:extension>
+      &lt;/xs:simpleContent>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="analysisUnit">
+    &lt;xs:complexType mixed="true">
+      &lt;xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      &lt;xs:attribute name="termsourceid" use="required"/>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="storage" type="xs:string"/>
+  &lt;xs:element name="description" type="xs:string"/>
+  &lt;xs:element name="domain">
+    &lt;xs:complexType mixed="true">
+      &lt;xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      &lt;xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="analysisWrap">
+    &lt;xs:complexType>
+      &lt;xs:sequence>
+        &lt;xs:element maxOccurs="unbounded" ref="softwarePackage"/>
+        &lt;xs:element ref="analysisType" maxOccurs="unbounded"/>
+      &lt;/xs:sequence>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="softwarePackage">
+    &lt;xs:complexType mixed="true">
+      &lt;xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      &lt;xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="analysisType">
+    &lt;xs:complexType mixed="true">
+      &lt;xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      &lt;xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="embargoes" type="xs:string"/>
+  &lt;xs:element name="dataType">
+    &lt;xs:complexType>
+      &lt;xs:simpleContent>
+        &lt;xs:extension base="xs:NCName">
+          &lt;xs:attribute name="termsource" use="required" type="xs:NCName"/>
+          &lt;xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+        &lt;/xs:extension>
+      &lt;/xs:simpleContent>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="byteSize" type="xs:string"/>
+  &lt;xs:element name="rightsReuseWrap">
+    &lt;xs:complexType>
+      &lt;xs:sequence>
+        &lt;xs:element ref="accessRights"/>
+        &lt;xs:element ref="rights"/>
+      &lt;/xs:sequence>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+  &lt;xs:element name="accessRights" type="xs:string"/>
+  &lt;xs:element name="rights" type="xs:string"/>
+&lt;/xs:schema>
+
+
+</code></pre>
+<p>Alternatively, the XSD can be viewed and downloaded <a href="XSDFinal.xsd" target=”_blank”>here</a>.</p>
+</div>
+</section>
+
+
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="copyright">
