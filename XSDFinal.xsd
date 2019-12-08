@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="record">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="fundAgency"/>
+        <xs:element maxOccurs="unbounded" ref="template" minOccurs="0"/>
+        <xs:element ref="staffWrap"/>
+        <xs:element ref="date"/>
+        <xs:element maxOccurs="unbounded" ref="analysisUnit"/>
+        <xs:element maxOccurs="unbounded" ref="storage"/>
+        <xs:element ref="description" minOccurs="0"/>
+        <xs:element maxOccurs="unbounded" ref="domain"/>
+        <xs:element ref="analysisWrap"/>
+        <xs:element ref="embargoes" minOccurs="0"/>
+        <xs:element maxOccurs="unbounded" ref="dataType"/>
+        <xs:element ref="byteSize" maxOccurs="unbounded"/>
+        <xs:element ref="rightsReuseWrap"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fundAgency">
+    <xs:complexType mixed="true">
+      <xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      <xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="template" type="xs:string"/>
+  <xs:element name="staffWrap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="creator"/>
+        <xs:element maxOccurs="unbounded" ref="PI"/>
+        <xs:element maxOccurs="unbounded" ref="contributor" minOccurs="0"/>
+        <xs:element maxOccurs="unbounded" ref="affiliation"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="creator">
+    <xs:complexType mixed="true">
+      <xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      <xs:attribute name="termsourceid" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PI">
+    <xs:complexType mixed="true">
+      <xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      <xs:attribute name="termsourceid" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="contributor">
+    <xs:complexType mixed="true">
+      <xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      <xs:attribute name="termsourceid" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="affiliation">
+    <xs:complexType mixed="true">
+      <xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      <xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="date">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="termsource" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="analysisUnit">
+    <xs:complexType mixed="true">
+      <xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      <xs:attribute name="termsourceid" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="storage" type="xs:string"/>
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="domain">
+    <xs:complexType mixed="true">
+      <xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      <xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="analysisWrap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="softwarePackage"/>
+        <xs:element ref="analysisType" maxOccurs="unbounded" minOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="softwarePackage">
+    <xs:complexType mixed="true">
+      <xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      <xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="analysisType">
+    <xs:complexType mixed="true">
+      <xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      <xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="embargoes" type="xs:string"/>
+  <xs:element name="dataType">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="termsource" use="required" type="xs:NCName"/>
+          <xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="byteSize">
+    <xs:complexType mixed="true">
+      <xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      <xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rightsReuseWrap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="accessRights"/>
+        <xs:element ref="rights"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="accessRights" type="xs:string"/>
+  <xs:element name="rights" type="xs:string"/>
+</xs:schema>
