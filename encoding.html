@@ -158,7 +158,12 @@
       &lt;/xs:simpleContent>
     &lt;/xs:complexType>
   &lt;/xs:element>
-  &lt;xs:element name="byteSize" type="xs:string"/>
+  &lt;xs:element name="byteSize">
+    &lt;xs:complexType mixed="true">
+      &lt;xs:attribute name="termsource" use="required" type="xs:NCName"/>
+      &lt;xs:attribute name="termsourceid" use="required" type="xs:NCName"/>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
   &lt;xs:element name="rightsReuseWrap">
     &lt;xs:complexType>
       &lt;xs:sequence>
